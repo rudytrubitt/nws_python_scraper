@@ -1,0 +1,14 @@
+[
+	{
+		"Name": "Kailua, HI",
+		"NWS_URL": "https://forecast.weather.gov/MapClick.php?lat=21.3969&lon=-157.7395#.XEowTcaIbM0"
+	},
+	{
+		"Name": "San Francisco, CA",
+		"NWS_URL": "https://forecast.weather.gov/MapClick.php?lat=37.777120000000025&lon=-122.41963999999996#.XEotMMaIbM0"
+	},
+	{
+		"Name": "Chicago, IL",
+		"NWS_URL": "https://forecast.weather.gov/MapClick.php?lat=41.8843&lon=-87.6324#.XEo_f8aIbM0"
+	}
+]
