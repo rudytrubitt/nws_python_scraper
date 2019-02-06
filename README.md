@@ -20,8 +20,16 @@ For NWS data stored in a table, I read the table into a pandas dataframe, transp
 
 The final data is converted back into the json format and written to a time-stamped file and also echoed to the console.
 
-sample Chicago output during the polar vortex of January 2019
-```{
+sample input file:
+```
+{
+		"Name": "Chicago, IL",
+		"NWS_URL": "https://forecast.weather.gov/MapClick.php?lat=41.8843&lon=-87.6324#.XEo_f8aIbM0"
+}
+```
+sample Chicago output during the arctic vortex of January 2019
+```
+{
     "Name": "Chicago, IL",
     "Temperature": "-13\u00b0F",
     "Humidity": "60%",
@@ -31,4 +39,5 @@ sample Chicago output during the polar vortex of January 2019
     "Visibility": "10.00 mi",
     "Wind Chill": "-39\u00b0F (-39\u00b0C)",
     "Last update": "30 Jan 3:53 pm CST"
-}```
+}
+```
