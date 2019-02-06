@@ -1,4 +1,10 @@
 # nws_python_scraper
+
+Dependencies:  
+selenium = "\*"  
+pandas = "\*"  
+lxml = "\*"
+
 A scraper for National Weather Service website using Python, Selenium and Pandas.
 This program reads ```cities.json``` as input. This file includes an arbitrary city name
 and the URL pointing to the desired page on the National Weather Service site.
