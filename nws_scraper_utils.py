@@ -1,13 +1,4 @@
-
-import json
-from selenium import webdriver
-#from selenium.webdriver.common.by import By
-#from selenium.webdriver.common.keys import Keys
 import pandas as pd
-
-#driver = webdriver.Firefox()
-
-
 '''  
 create function get_temperature, etc.
 These are simple selenium find_element_by_class
@@ -20,7 +11,6 @@ def get_temperature(url,driver):
     data = driver.find_element_by_class_name('myforecast-current-lrg')
     location_data_dict = {'Temperature': data.text}  # if you don't append the .text method you get the ID,
                                                      # not the content string!
-    #print(location_data_dict)
     return location_data_dict                        #returns a dictionary key:value pair
 
 def get_station(url,driver):
@@ -28,7 +18,6 @@ def get_station(url,driver):
     data = driver.find_element_by_class_name('panel-title')  # TODO: unreliable, can return the wrong panel-title
     location_data_dict = {'Station': data.text}  # if you don't append the .text method you get the ID,
                                                      # not the content string!
-    #print(location_data_dict)
     return location_data_dict                        #returns a dictionary key:value pair
 
 def get_condition_description(url,driver):
@@ -36,7 +25,6 @@ def get_condition_description(url,driver):
     data = driver.find_element_by_class_name('myforecast-current')
     location_data_dict = {'Description': data.text}  # if you don't append the .text method you get the ID,
                                                      # not the content string!
-    #print(location_data_dict)
     return location_data_dict                        #returns a dictionary key:value pair
 
 '''for current condition details, 

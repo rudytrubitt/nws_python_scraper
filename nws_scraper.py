@@ -1,25 +1,23 @@
 import json
-import table_utils
+import nws_scraper_utils
 from selenium import webdriver
 import time
 
-import time
 time_stamp = time.strftime("%Y%m%d-%H%M%S")
-
 time_stamp_filename = time_stamp + '_nws_log.json'
 
 driver = webdriver.Firefox()
-time_stamp_filename
+
 '''--------- Define CityCurrentStats class --------'''
 
 class CityObject:
     def __init__(self, name, url, driver):
         self.name = {'Name': name}
         self.url = {'URL' : url}
-        self.temperature = table_utils.get_temperature(url,driver)
-        self.condition_description = table_utils.get_condition_description(url,driver)
-        self.station = table_utils.get_station(url,driver)
-        self.condition_details = table_utils.get_condition_details(url,driver)
+        self.temperature = nws_scraper_utils.get_temperature(url, driver)
+        self.condition_description = nws_scraper_utils.get_condition_description(url, driver)
+        self.station = nws_scraper_utils.get_station(url, driver)
+        self.condition_details = nws_scraper_utils.get_condition_details(url, driver)
 
 def main():
 
@@ -37,10 +35,8 @@ def main():
     for city_pair in cities:                # This iterates and returns individual dictionaries from the list
         name = (city_pair['Name'])          # and we extract the value from each key here...
         url = (city_pair['NWS_URL'])
-        #print(name,':', url)  # print for debug
-        print('-------------------------------------------')
         city = CityObject(name,url,driver)         # create a City Object
-        all_info = table_utils.merge_dictionaries(city.name, city.temperature, city.condition_details)
+        all_info = nws_scraper_utils.merge_dictionaries(city.name, city.temperature, city.condition_details)
 
 
         # Finally, append each city dictionary to json file
